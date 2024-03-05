@@ -12,13 +12,12 @@ public class PropertiesOfTheElements {
         System.setProperty("webdriver.chrome.driver", "D:\\Program Files\\webdrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
-        //
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         driver.get("https://www.avito.ru/all/avtomobili");
 
         WebElement element = driver.findElement(By.xpath("//link[rel='preload']"));
-//        String par = element.getAttribute("href");
+
         String par = element.getText();
         System.out.println(par);
     }

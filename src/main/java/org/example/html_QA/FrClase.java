@@ -11,7 +11,7 @@ import java.time.Duration;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
-public class firstClase {
+public class FrClase {
     public static void main(String[] args) throws InterruptedException {
 
         System.setProperty("webdriver.chrome.driver", "D:" +
