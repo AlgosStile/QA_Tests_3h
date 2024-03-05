@@ -1,0 +1,104 @@
+<!--   vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv   -->
+<!--   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   -->
+<!--   vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv   -->
+
+<!--Этот html файл нужно запустить в VC Code c установленным плагином live server-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.4s;
+            opacity: 0; /* Изначально скрыты */
+        }
+        a.button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Анимация для кнопки слева */
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-150%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Анимация для кнопки сверху */
+        @keyframes slideInFromTop {
+            from {
+                transform: translateY(-150%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Анимация для кнопки справа */
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(150%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        #a {
+            animation: 1s ease-out 0s 1 slideInFromLeft forwards;
+        }
+
+        #b {
+            animation: 2s ease-out 0s 1 slideInFromTop forwards;
+        }
+
+        #c {
+            animation: 3s ease-out 0s 1 slideInFromRight forwards;
+        }
+    </style>
+</head>
+<body>
+<script>
+    function myFunc() {
+        const result = prompt("PROMPT");
+        alert(result);
+    }
+</script>
+<div class="container">
+    <a id="a" class="button" onclick="alert('I`am alert!')" href="javascript:void(0);">button 1</a>
+    <a id="b" class="button" onclick="myFunc()" href="javascript:void(0);">button 2</a>
+    <a id="c" class="button" onclick="confirm('I`am confirm!')" href="javascript:void(0);">button 3</a>
+</div>
+
+</body>
+</html>
