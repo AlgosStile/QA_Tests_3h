@@ -7,7 +7,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Set;
-
+/**
+ * Перед запуском теста, index.html нужно запустить в VC Code c установленным плагином live server
+ * Далее запускаем тест!
+ */
 public class SecClase {
     public static void main(String[] args) throws InterruptedException {
 

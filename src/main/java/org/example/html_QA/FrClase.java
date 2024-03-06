@@ -11,6 +11,10 @@ import java.time.Duration;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
+/**
+ * Перед запуском теста, index.html нужно запустить в VC Code c установленным плагином live server
+ * Далее запускаем тест!
+ */
 public class FrClase {
     public static void main(String[] args) throws InterruptedException {
 

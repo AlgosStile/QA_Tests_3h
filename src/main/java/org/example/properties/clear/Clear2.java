@@ -33,7 +33,7 @@ public class Clear2 {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
-            Thread.sleep(20000);
+            Thread.sleep(2000);
             driver.quit();
         }
     }
