@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class PropertiesOfTheElements {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\Program Files\\webdrivers\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
@@ -44,7 +44,7 @@ public class PropertiesOfTheElements {
             }
         }
 
-        // Обновленный XPath для кнопки 4-й страницы с использованием data-marker
+        // XPath для кнопки 4-й страницы с использованием data-marker
         WebElement page4Button = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@data-marker='pagination-button/page(4)']")));
         page4Button.click();
@@ -53,9 +53,9 @@ public class PropertiesOfTheElements {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+        } finally {
+            driver.quit();
         }
-
-        driver.quit();
     }
 }
