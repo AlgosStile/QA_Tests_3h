@@ -10,6 +10,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+/**
+ * Автотест для проверки корректности ввода данных и проверки пагинации.
+ * Зашли на страницу, ввели слово "ВАЗ", нажали кнопку "Найти", пролистали страницу клавишей вниз(имитация),
+ * нажали на 4 страницу, перешли на 4 страницу, если все Ok, то закрыли браузер.
+ */
 public class PropertiesOfTheElements {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "D:\\Program Files\\webdrivers\\chromedriver.exe");

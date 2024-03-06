@@ -10,6 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+/**
+ * Тест проверяет, что при переходе на другую страницу пагинации отображаются правильные данные
+ * и что предыдущая страница становится недоступной.
+ */
 public class PaginationJsOrg {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "D:" +

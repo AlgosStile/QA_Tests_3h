@@ -29,8 +29,6 @@ public class WaitExplicitAndNonExplicit {
 
         // Кликаем по первому элементу в результатах поиска
         firstResult.click();
-
-        // Закрываем браузер (драйвер)
         driver.quit();
     }
 }

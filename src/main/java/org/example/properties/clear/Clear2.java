@@ -9,7 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import java.time.Duration;
 
 /**
- * Второй вариант поиска и перемещения элемента
+ * Второй вариант поиска и перемещения элементов местами
  */
 public class Clear2 {
     public static void main(String[] args) throws InterruptedException {
