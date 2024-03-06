@@ -1,7 +1,7 @@
 package org.example.properties;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,32 +33,29 @@ public class PropertiesOfTheElements {
         new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[contains(text(), 'ВАЗ')]")));
 
-        // Пауза 3 секунды
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        // Прокручиваем страницу вниз
+        WebElement body = driver.findElement(By.cssSelector("body"));
+        for (int i = 0; i < 30; i++) {
+            body.sendKeys(Keys.PAGE_DOWN);
+            try {
+                Thread.sleep(50); //пауза между прокрутками
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
-        // Проскролливаем страницу до кнопок пагинации
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//div[@data-marker='pagination-button']")));
-
-        // Дополнительное ожидание для убеждения, что страница и элементы полностью загружены
-        new WebDriverWait(driver, Duration.ofSeconds(10))
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(), '4')]//ancestor::a")));
-
-        // Нажимаем на кнопку 4-й страницы
-        WebElement page4Button = driver.findElement(By.xpath("//textarea[@aria-label='Страница 4']"));
+        // Обновленный XPath для кнопки 4-й страницы с использованием data-marker
+        WebElement page4Button = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@data-marker='pagination-button/page(4)']")));
         page4Button.click();
 
-        // Дополнительная пауза перед закрытием браузера (если необходимо)
+        // Дополнительная пауза перед закрытием браузера
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        // Закрываем браузер
         driver.quit();
     }
 }
