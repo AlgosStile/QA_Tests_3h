@@ -1,16 +1,11 @@
-package org.example.testNG;
+package org.example.testNG.tests2;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
 
 public class FrTestNG {
     public static void main(String[] args) throws InterruptedException {
@@ -26,10 +21,13 @@ public class FrTestNG {
         try {
             driver.get("http://127.0.0.1:5507/index.html");
             Thread.sleep(6000);
-
+            //? Произвольная проверка title c использованием TestNG
            String title = driver.getTitle();
+           Assert.assertEquals(title ,"Test document");
 
-            Assert.assertEquals(title ,"Test document");
+            LoginPage ln = new LoginPage();
+            ln.login("admin", "12345@");
+
 
         } catch (InterruptedException e) {
             e.printStackTrace();
