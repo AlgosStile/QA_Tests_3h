@@ -17,7 +17,7 @@ public class Test1 {
 
     @Parameters({"db"})
 //    @Test(groups = {"smokeTest", "regress"})
-    @Test(dataProvider = "db" )
+    @Test(dataProvider = "db")
     public void test1(String e1, int e2) {
         System.out.println("Test 1" + " " + e1 + " " + e2);
     }
