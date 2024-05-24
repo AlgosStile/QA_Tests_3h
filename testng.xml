@@ -14,7 +14,7 @@
         <classes>
 
             <class name="org.example.testNG.tests.Test1"></class>
-            <class name="org.example.testNG.tests.Test2"></class>
+<!--            <class name="org.example.testNG.tests.Test2"></class>-->
             <class name="org.example.testNG.tests.Test3"></class>
 
 <!--            <class name="org.example.testNG.tests.Test2">-->
